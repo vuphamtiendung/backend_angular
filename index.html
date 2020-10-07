@@ -1,0 +1,292 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content=""/>
+  <base href="/backend_angular/">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"/>
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Milestone">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Milestone">
+  <meta name="theme-color" content="#4C7FF0">
+  <title>Milestone - Bootstrap 4 Dashboard Template</title>
+  <!-- page stylesheets -->
+  <link rel="stylesheet" href="vendor/sweetalert/dist/sweetalert.css">
+  <!-- end page stylesheets -->
+  <!-- build:css({.tmp,app}) styles/app.min.css -->
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="vendor/pace/themes/blue/pace-theme-minimal.css"/>
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css"/>
+  <link rel="stylesheet" href="vendor/animate.css/animate.css"/>
+  <link rel="stylesheet" href="styles/app.css" id="load_styles_before"/>
+  <link rel="stylesheet" href="styles/app.skins.css"/>
+  <!-- Thư viện riêng -->
+  <link rel="stylesheet" href="vendor/angular-material.min.css">
+  <link rel="stylesheet" href="1.css">
+  <!-- endbuild -->
+</head>
+
+<body class="pace-done" ng-app="myApp" ng-controller="MyController">
+  <div class="pace  pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+      <div class="pace-progress-inner"></div>
+    </div>
+  </div>
+  <div class="pace-activity"></div>
+  <div class="app {{menubentrai}}">
+    <!-- Menu trái -->
+    <div class="sidebar-panel">
+      <div class="brand">
+        <!-- toggle offscreen menu -->
+        <a href="javascript:;" data-toggle="sidebar" class="toggle-offscreen hidden-lg-up">
+          <i class="material-icons">menu</i>
+        </a>
+        <!-- /toggle offscreen menu -->
+        <!-- logo -->
+        <a class="brand-logo">
+          <img class="expanding-hidden" src="images/logo.png" alt="">
+        </a>
+        <!-- /logo -->
+      </div>
+      <div class="nav-profile dropdown">
+        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+          <div class="user-image">
+            <img src="images/avatar.jpg" class="avatar img-circle" alt="user" title="user">
+          </div>
+          <div class="user-info expanding-hidden">
+            Betty Simmons
+            <small class="bold">Administrator</small>
+          </div>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="javascript:;">Settings</a>
+          <a class="dropdown-item" href="javascript:;">Upgrade</a>
+          <a class="dropdown-item" href="javascript:;">
+            <span>Notifications</span>
+            <span class="tag bg-primary">34</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="javascript:;">Help</a>
+          <a class="dropdown-item" href="">Logout</a>
+        </div>
+      </div>
+      <!-- main navigation -->
+      <nav>
+        <p class="nav-title">NAVIGATION</p>
+        <ul class="nav">
+          <!-- dashboard -->
+          <li>
+            <a href="index.html">
+              <i class="material-icons text-primary">home</i>
+              <span>Home</span>
+            </a>
+          </li>
+          <!-- /dashboard -->
+          <!-- apps -->
+          <li>
+            <a href="javascript:;">
+              <span class="menu-caret">
+                <i class="material-icons">arrow_drop_down</i>
+              </span>
+              <i class="material-icons text-success">font_download</i>
+              <span class="badge bg-primary pull-right">08</span>
+              <span>Quản lý user</span>
+            </a>
+            <ul class="sub-menu">
+              <li>
+                <a href="danh_sach_nguoi_dung">
+                  <span>Danh sách người dùng</span>
+                </a>
+              </li>
+              <li>
+                <a href="them_nguoi_dung">
+                  <span>Thêm người dùng</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- /main navigation -->
+    </div>
+    <!-- content panel -->
+    <div class="main-panel">
+      <!-- top header -->
+      <nav class="header navbar {{hienthimenutren}}" >
+        <div class="header-inner">
+          <div class="navbar-item navbar-spacer-right brand hidden-lg-up">
+            <!-- toggle offscreen menu -->
+            <a href="javascript:;" data-toggle="sidebar" class="toggle-offscreen">
+              <i class="material-icons">menu</i>
+            </a>
+            <!-- /toggle offscreen menu -->
+            <!-- logo -->
+            <a class="brand-logo hidden-xs-down">
+              <img src="images/logo_white.png" alt="logo">
+            </a>
+            <!-- /logo -->
+          </div>
+          <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
+            <span>{{tieude}}</span>
+          </a>
+          <div class="navbar-search navbar-item">
+            <form class="search-form">
+              <i class="material-icons">search</i>
+              <input class="form-control" type="text" placeholder="Search">
+            </form>
+          </div>
+          <div class="navbar-item nav navbar-nav">
+            <div class="nav-item nav-link">
+              <a href="" ng-click="dangxuat()">Logout</a>
+            </div>
+            <div class="nav-item nav-link dropdown">
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="javascript:;">English</a>
+                <a class="dropdown-item" href="javascript:;">Russian</a>
+              </div>
+            </div>
+            <div class="nav-item nav-link dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="material-icons">notifications</i>
+                <span class="tag tag-danger">4</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right notifications">
+                <div class="dropdown-item">
+                  <div class="notifications-wrapper">
+                    <ul class="notifications-list">
+                      <li>
+                        <a href="javascript:;">
+                          <div class="notification-icon">
+                            <div class="circle-icon bg-success text-white">
+                              <i class="material-icons">arrow_upward</i>
+                            </div>
+                          </div>
+                          <div class="notification-message">
+                            <b>Sean</b>
+                            launched a new application
+                            <span class="time">2 seconds ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">
+                          <div class="notification-icon">
+                            <div class="circle-icon bg-danger text-white">
+                              <i class="material-icons">check</i>
+                            </div>
+                          </div>
+                          <div class="notification-message">
+                            <b>Removed calendar</b>
+                            from app list
+                            <span class="time">4 hours ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">
+                          <span class="notification-icon">
+                            <span class="circle-icon bg-info text-white">J</span>
+                          </span>
+                          <div class="notification-message">
+                            <b>Jack Hunt</b>
+                            has
+                            <b>joined</b>
+                            mailing list
+                            <span class="time">9 days ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">
+                          <span class="notification-icon">
+                            <span class="circle-icon bg-primary text-white">C</span>
+                          </span>
+                          <div class="notification-message">
+                            <b>Conan Johns</b>
+                            created a new list
+                            <span class="time">9 days ago</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="notification-footer">Notifications</div>
+                </div>
+              </div>
+            </div>
+            <a href="javascript:;" class="nav-item nav-link nav-link-icon" data-toggle="modal" data-target=".chat-panel" data-backdrop="false">
+              <i class="material-icons">chat_bubble</i>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- /top header -->
+      <!-- main area -->
+      <div class="main-content">
+        <div class="content-view">
+          <div class="row">
+            <div ng-view></div>
+          </div>
+        </div>
+        <div ng-include="'giaodien/footer.html'" scope="" onload=""></div>
+      </div>
+      <!-- /main area -->
+    </div>
+    <!-- /content panel -->
+
+  </div>
+
+  <script type="text/javascript">
+    window.paceOptions = {
+      document: true,
+      eventLag: true,
+      restartOnPushState: true,
+      restartOnRequestAfter: true,
+      ajax: {
+        trackMethods: [ 'POST','GET']
+      }
+    };
+  </script>
+
+  <!-- build:js({.tmp,app}) scripts/app.min.js -->
+  <script src="vendor/jquery/dist/jquery.js"></script>
+  <script src="vendor/pace/pace.js"></script>
+  <script src="vendor/tether/dist/js/tether.js"></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="vendor/fastclick/lib/fastclick.js"></script>
+  <script src="scripts/constants.js"></script>
+  
+  <div class="bg-default"></div>
+  <div class="bg-primary"></div>
+  <div class="bg-success"></div>
+  <div class="bg-warning"></div>
+  <div class="bg-danger"></div>
+  <div class="bg-info"></div>
+  <div class="bg-white"></div>
+  <div class="bg-dark"></div>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+
+  <!-- page scripts -->
+  <script src="vendor/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- end page scripts -->
+
+  <!-- initialize page scripts -->
+  <script src="scripts/ui/alert.js"></script>
+  <!-- end initialize page scripts -->
+  
+  <!-- Thư viện riêng -->
+  <script type="text/javascript" src="vendor/bootstrap.js"></script>  
+  <script type="text/javascript" src="vendor/angular-1.5.min.js"></script>  
+  <script type="text/javascript" src="vendor/angular-route.min.js"></script>  
+  <script type="text/javascript" src="vendor/angular-animate.min.js"></script>
+  <script type="text/javascript" src="vendor/angular-aria.min.js"></script>
+  <script type="text/javascript" src="vendor/angular-messages.min.js"></script>
+  <script type="text/javascript" src="vendor/angular-material.min.js"></script>  
+  <script type="text/javascript" src="1.js"></script>
+  <!-- /thư viện riêng -->
+</body>
+</html>

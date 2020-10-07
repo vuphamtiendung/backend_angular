@@ -1,0 +1,51 @@
+<div class="col-lg-6 push-sm-3"  >
+  <div class="card">
+    <div class="card-header no-bg b-a-0">
+      <div class="text-xs-center m-b-3">
+        <img src="images/logo-icon.png" height="80" alt="" class="m-b-1">
+        <h5>
+          Thêm người dùng
+        </h5>
+        <p class="text-muted">
+          Thêm người dùng vào hệ thông.
+        </p>
+      </div>
+    </div>
+    <div class="card-block">
+      <form>
+        <fieldset class="form-group">
+          <label for="exampleInputEmail1">
+            Tên đăng nhập (Email address)
+          </label>
+          <input ng-model="username" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+          <small class="text-muted">
+            Chúng tôi sẽ ko share email cho đơn vị khác.
+          </small>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="exampleInputPassword1">
+            Mật khẩu
+          </label>
+          <input ng-model="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="exampleSelect1">
+            Level
+          </label>
+          <select class="form-control" id="exampleSelect1" ng-model="level">
+            <option  value="1">
+              Người quản trị
+            </option>
+            <option value="2">
+              Người dùng thông thường
+            </option>
+          </select>
+        </fieldset>
+        <button type="button" class="btn btn-primary" ng-click="addUser()">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

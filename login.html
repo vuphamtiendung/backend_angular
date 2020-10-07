@@ -1,0 +1,30 @@
+<div class="session-panel">
+  <div class="session">
+    <div class="session-content">
+      <div class="card card-block form-layout" ng-form name="formdn">
+          <div class="text-xs-center m-b-3">
+            <img src="images/logo-icon.png" height="80" alt="" class="m-b-1">
+            <h5>
+              Welcome back!
+            </h5>
+            <p class="text-muted">
+              Sign in with your app id to continue.
+            </p>
+          </div>
+          <fieldset class="form-group">
+            <label for="username">
+              Tên Đăng nhập(user name)
+            </label>
+            <input type="email" class="form-control form-control-lg" id="username" placeholder="email" required="" aria-required="true" ng-model="nguoidung.username">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="password">
+              Nhập mật khẩu
+            </label>
+            <input type="password" class="form-control form-control-lg" id="password" placeholder="********" required="" aria-required="true" ng-model="nguoidung.password">
+          </fieldset>
+          <button ng-disabled="!formdn.$valid" class="btn btn-primary btn-block btn-lg" type="button" ng-click="dangnhap(nguoidung)"> Đăng nhập </button>
+      </div>
+    </div>
+  </div>
+</div>
